@@ -163,13 +163,13 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 				$query = parse_url( $url, PHP_URL_QUERY );
 				$query = parse_str( $query, $data );
 
-				$id = null;
+				$transaction_id = null;
 				if ( isset( $data['ID'] ) ) {
-					$id = $data['ID'];
+					$transaction_id = $data['ID'];
 				}
 
 				$result->url = $url;
-				$result->id  = $id;
+				$result->id  = $transaction_id;
 			} else {
 				$this->error = new WP_Error( 'paydutch_error', (string) $response, $response );
 			}
