@@ -8,7 +8,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-class Pronamic_Gateways_PayDutch_XML_QueryRequestMessage extends Pronamic_Gateways_PayDutch_XML_RequestMessage {
+class Pronamic_WP_Pay_Gateways_PayDutch_XML_QueryRequestMessage extends Pronamic_WP_Pay_Gateways_PayDutch_XML_RequestMessage {
 	const TYPE = 'query';
 
 	//////////////////////////////////////////////////

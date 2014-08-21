@@ -71,9 +71,9 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 	/**
 	 * Request the specified message
 	 *
-	 * @param Pronamic_Gateways_PayDutch_XML_RequestMessage $message
+	 * @param Pronamic_WP_Pay_Gateways_PayDutch_XML_RequestMessage $message
 	 */
-	private function request( Pronamic_Gateways_PayDutch_XML_RequestMessage $message ) {
+	private function request( Pronamic_WP_Pay_Gateways_PayDutch_XML_RequestMessage $message ) {
 		return Pronamic_WP_Util::remote_get_body( self::API_URL, 200, array(
 			'method'    => 'POST',
 			'sslverify' => false,
@@ -89,7 +89,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 	 */
 	public function get_payment_methods() {
 		$merchant = new Pronamic_WP_Pay_Gateways_PayDutch_Merchant( $this->username, $this->password );
-		$message = new Pronamic_Gateways_PayDutch_XML_ListMethodRequestMessage( $merchant );
+		$message = new Pronamic_WP_Pay_Gateways_PayDutch_XML_ListMethodRequestMessage( $merchant );
 
 		$result = $this->request( $message );
 
@@ -112,7 +112,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 	public function get_bank_list() {
 		$list = null;
 
-		$message = new Pronamic_Gateways_PayDutch_XML_RetrieveBankListRequestMessage( Pronamic_WP_Pay_Gateways_PayDutch_Methods::WEDEAL, true );
+		$message = new Pronamic_WP_Pay_Gateways_PayDutch_XML_RetrieveBankListRequestMessage( Pronamic_WP_Pay_Gateways_PayDutch_Methods::WEDEAL, true );
 
 		$result = $this->request( $message );
 
@@ -124,7 +124,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 			if ( is_wp_error( $xml ) ) {
 				$this->error = $xml;
 			} else {
-				$list = Pronamic_Gateways_PayDutch_XML_BankListParser::parse( $xml );
+				$list = Pronamic_WP_Pay_Gateways_PayDutch_XML_BankListParser::parse( $xml );
 			}
 		}
 
@@ -148,7 +148,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 	public function request_transaction( $transaction_request ) {
 		$result = null;
 
-		$message = new Pronamic_Gateways_PayDutch_XML_TransactionRequestMessage( $transaction_request );
+		$message = new Pronamic_WP_Pay_Gateways_PayDutch_XML_TransactionRequestMessage( $transaction_request );
 
 		$response = $this->request( $message );
 
@@ -185,7 +185,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 		$merchant->reference = $reference;
 		$merchant->test = true;
 
-		$message = new Pronamic_Gateways_PayDutch_XML_QueryRequestMessage( $merchant );
+		$message = new Pronamic_WP_Pay_Gateways_PayDutch_XML_QueryRequestMessage( $merchant );
 
 		$result = $this->request( $message );
 
@@ -197,7 +197,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 			if ( is_wp_error( $xml ) ) {
 				$this->error = $xml;
 			} else {
-				$result = Pronamic_Gateways_PayDutch_XML_PaymentInfoParser::parse( $xml->paymentinfo );
+				$result = Pronamic_WP_Pay_Gateways_PayDutch_XML_PaymentInfoParser::parse( $xml->paymentinfo );
 			}
 		}
 

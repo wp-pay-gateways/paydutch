@@ -15,7 +15,7 @@ class Pronamic_Pay_Gateways_PayDutch_TestBankListParser extends WP_UnitTestCase 
 	 * @depends test_init
 	 */
 	function test_parser( $simplexml ) {
-		$banklist = Pronamic_Gateways_PayDutch_XML_BankListParser::parse( $simplexml );
+		$banklist = Pronamic_WP_Pay_Gateways_PayDutch_XML_BankListParser::parse( $simplexml );
 
 		$this->assertInternalType( 'array', $banklist );
 

@@ -15,9 +15,9 @@ class Pronamic_Pay_Gateways_PayDutch_TestPaymentInfoParser extends WP_UnitTestCa
 	 * @depends test_init
 	 */
 	function test_parser( $simplexml ) {
-		$payment_info = Pronamic_Gateways_PayDutch_XML_PaymentInfoParser::parse( $simplexml->paymentinfo );
+		$payment_info = Pronamic_WP_Pay_Gateways_PayDutch_XML_PaymentInfoParser::parse( $simplexml->paymentinfo );
 
-		$this->assertInstanceOf( 'Pronamic_Gateways_PayDutch_PaymentInfo', $payment_info );
+		$this->assertInstanceOf( 'Pronamic_WP_Pay_Gateways_PayDutch_PaymentInfo', $payment_info );
 
 		return $payment_info;
 	}
@@ -26,7 +26,7 @@ class Pronamic_Pay_Gateways_PayDutch_TestPaymentInfoParser extends WP_UnitTestCa
 	 * @depends test_parser
 	 */
 	function test_values( $payment_info ) {
-		$expected = new Pronamic_Gateways_PayDutch_PaymentInfo();
+		$expected = new Pronamic_WP_Pay_Gateways_PayDutch_PaymentInfo();
 		$expected->test            = false;
 		$expected->id              = 'cdd622d5-5719-4482-93a9-4631f1263cba';
 		$expected->description     = 'Order 3 for product X';

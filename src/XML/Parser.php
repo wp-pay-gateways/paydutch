@@ -8,7 +8,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-interface Pronamic_Gateways_PayDutch_XML_Parser {
+interface Pronamic_WP_Pay_Gateways_PayDutch_XML_Parser {
 	/**
 	 * Parse the specified XML element
 	 * 

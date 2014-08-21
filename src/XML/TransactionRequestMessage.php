@@ -8,7 +8,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-class Pronamic_Gateways_PayDutch_XML_TransactionRequestMessage extends Pronamic_Gateways_PayDutch_XML_RequestMessage {
+class Pronamic_WP_Pay_Gateways_PayDutch_XML_TransactionRequestMessage extends Pronamic_WP_Pay_Gateways_PayDutch_XML_RequestMessage {
 	const TYPE = 'transaction';
 
 	//////////////////////////////////////////////////
@@ -39,7 +39,7 @@ class Pronamic_Gateways_PayDutch_XML_TransactionRequestMessage extends Pronamic_
 			'password'    => $this->transaction_request->password,
 			'reference'   => $this->transaction_request->reference,
 			'description' => $this->transaction_request->description,
-			'amount'      => Pronamic_Gateways_PayDutch_PayDutch::format_amount( $this->transaction_request->amount ),
+			'amount'      => Pronamic_WP_Pay_Gateways_PayDutch_Client::format_amount( $this->transaction_request->amount ),
 			'methodcode'  => $this->transaction_request->method_code,
 			'issuerid'    => $this->transaction_request->issuer_id,
 			'test'        => Pronamic_WP_Util::to_string_boolean( $this->transaction_request->test ),

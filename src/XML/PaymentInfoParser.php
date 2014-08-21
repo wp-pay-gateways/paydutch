@@ -8,7 +8,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-class Pronamic_Gateways_PayDutch_XML_PaymentInfoParser implements Pronamic_Gateways_PayDutch_XML_Parser {
+class Pronamic_WP_Pay_Gateways_PayDutch_XML_PaymentInfoParser implements Pronamic_WP_Pay_Gateways_PayDutch_XML_Parser {
 	/**
 	 * Parse the specified XML element into an iDEAL transaction object
 	 *
@@ -20,7 +20,7 @@ class Pronamic_Gateways_PayDutch_XML_PaymentInfoParser implements Pronamic_Gatew
 		$payment_info->test            = Pronamic_XML_Util::filter( $xml->test, FILTER_VALIDATE_BOOLEAN );
 		$payment_info->id              = Pronamic_XML_Util::filter( $xml->id, FILTER_SANITIZE_STRING );
 		$payment_info->description     = Pronamic_XML_Util::filter( $xml->description, FILTER_SANITIZE_STRING );
-		$payment_info->amount          = Pronamic_Gateways_PayDutch_PayDutch::parse_amount( Pronamic_XML_Util::filter( $xml->amount, FILTER_SANITIZE_STRING ) );
+		$payment_info->amount          = Pronamic_WP_Pay_Gateways_PayDutch_Client::parse_amount( Pronamic_XML_Util::filter( $xml->amount, FILTER_SANITIZE_STRING ) );
 		$payment_info->state           = Pronamic_XML_Util::filter( $xml->state, FILTER_SANITIZE_STRING );
 		$payment_info->reference       = Pronamic_XML_Util::filter( $xml->reference, FILTER_SANITIZE_STRING );
 		$payment_info->methodcode      = Pronamic_XML_Util::filter( $xml->methodcode, FILTER_SANITIZE_STRING );

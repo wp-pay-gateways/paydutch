@@ -8,7 +8,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-abstract class Pronamic_Gateways_PayDutch_XML_RequestMessage extends Pronamic_Gateways_PayDutch_XML_Message  {
+abstract class Pronamic_WP_Pay_Gateways_PayDutch_XML_RequestMessage extends Pronamic_WP_Pay_Gateways_PayDutch_XML_Message  {
 	/**
 	 * Constructs and initialize an request message
 	 *
@@ -28,7 +28,7 @@ abstract class Pronamic_Gateways_PayDutch_XML_RequestMessage extends Pronamic_Ga
 	 * @return DOMDocument
 	 */
 	protected function get_document() {
-		$document = Pronamic_Gateways_PayDutch_XML_Message::new_dom_document();
+		$document = Pronamic_WP_Pay_Gateways_PayDutch_XML_Message::new_dom_document();
 
 		// Root
 		$root = $document->createElement( $this->get_name() );
