@@ -10,11 +10,14 @@
 [![License](https://poser.pugx.org/wp-pay-gateways/paydutch/license.svg)](https://packagist.org/packages/wp-pay-gateways/paydutch)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
-## Documentation
+## Websites
 
 *	[Dutch Payment Group](http://www.dutchpaymentgroup.com/)
 *	[PayDutch](http://www.paydutch.nl/)
 *	[WeDeal](http://www.wedeal.nl/)
+
+## Documentation
+
 *	[Dutch Payment Group payment platform: Merchant Integration Manual ](http://pronamic.nl/wp-content/uploads/2013/01/DPG-Merchant-Integration-Manual-V201.pdf)
 
 ## Other
