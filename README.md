@@ -12,4 +12,7 @@
 
 ## Documentation
 
+*	[Dutch Payment Group](http://www.dutchpaymentgroup.com/)
+*	[PayDutch](http://www.paydutch.nl/)
+*	[WeDeal](http://www.wedeal.nl/)
 *	[Dutch Payment Group payment platform: Merchant Integration Manual ](http://pronamic.nl/wp-content/uploads/2013/01/DPG-Merchant-Integration-Manual-V201.pdf)
