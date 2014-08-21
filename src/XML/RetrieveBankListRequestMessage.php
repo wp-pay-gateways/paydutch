@@ -37,7 +37,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_XML_RetrieveBankListRequestMessage exten
 		$element = self::add_element( $document, $document->documentElement, 'retrievebanklist' );
 		self::add_elements( $document, $element, array(
 			'methodcode' => $this->method_code,
-			'test'       => Pronamic_WP_Util::to_string_boolean( $this->test )
+			'test'       => Pronamic_WP_Pay_Util::to_string_boolean( $this->test )
 		) );
 
 		// Return

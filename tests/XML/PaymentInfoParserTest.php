@@ -1,8 +1,8 @@
 <?php
 
-class Pronamic_Pay_Gateways_PayDutch_TestPaymentInfoParser extends WP_UnitTestCase {
+class Pronamic_WP_Pay_Gateways_PayDutch_XML_PaymentInfoParserTest extends WP_UnitTestCase {
 	function test_init() {
-		$filename = Pronamic_WP_Pay_Plugin::$dirname . '/tests/data/Pronamic/Pay/Gateways/PayDutch/response-query.xml';
+		$filename = __DIR__ . '/Mock/response-query.xml';
 
 		$simplexml = simplexml_load_file( $filename );
 

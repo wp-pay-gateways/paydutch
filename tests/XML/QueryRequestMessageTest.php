@@ -1,8 +1,8 @@
 <?php
 
-class Pronamic_Pay_Gateways_PayDutch_TestQueryRequest extends WP_UnitTestCase {
+class Pronamic_WP_Pay_Gateways_PayDutch_XML_QueryRequestMessageTest extends WP_UnitTestCase {
 	function test_request_message() {
-		$filename = Pronamic_WP_Pay_Plugin::$dirname . '/tests/data/Pronamic/Pay/Gateways/PayDutch/request-query.xml';
+		$filename = __DIR__ . '/Mock/request-query.xml';
 
 		$expected = Pronamic_WP_Pay_Gateways_PayDutch_XML_Message::new_dom_document();
 		$expected->load( $filename );

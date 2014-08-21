@@ -1,8 +1,8 @@
 <?php
 
-class Pronamic_Pay_Gateways_PayDutch_TestBankListParser extends WP_UnitTestCase {
+class Pronamic_WP_Pay_Gateways_PayDutch_XML_BankListParserTest extends WP_UnitTestCase {
 	function test_init() {
-		$filename = Pronamic_WP_Pay_Plugin::$dirname . '/tests/data/Pronamic/Pay/Gateways/PayDutch/response-retrievebanklist.xml';
+		$filename = __DIR__ . '/Mock/response-retrievebanklist.xml';
 
 		$simplexml = simplexml_load_file( $filename );
 

@@ -18,8 +18,8 @@ class Pronamic_WP_Pay_Gateways_PayDutch_XML_BankListParser implements Pronamic_W
 		$list = array();
 
 		foreach ( $xml->issuer as $issuer ) {
-			$id   = Pronamic_XML_Util::filter( $issuer->issuerid, FILTER_SANITIZE_STRING );
-			$name = Pronamic_XML_Util::filter( $issuer->bankname, FILTER_SANITIZE_STRING );
+			$id   = Pronamic_WP_Pay_XML_Security::filter( $issuer->issuerid, FILTER_SANITIZE_STRING );
+			$name = Pronamic_WP_Pay_XML_Security::filter( $issuer->bankname, FILTER_SANITIZE_STRING );
 
 			$list[ $id ] = $name;
 		}
