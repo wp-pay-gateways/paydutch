@@ -32,6 +32,8 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Gateway extends Pronamic_WP_Pay_Gateway 
 		$this->set_slug( self::SLUG );
 
 		$this->client = new Pronamic_WP_Pay_Gateways_PayDutch_Client( $config->username, $config->password );
+		
+		$this->client->set_test( $config->mode == Pronamic_IDeal_IDeal::MODE_TEST );
 	}
 
 	/////////////////////////////////////////////////
@@ -92,7 +94,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Gateway extends Pronamic_WP_Pay_Gateway 
 
 		$result = $this->client->request_transaction( $transaction_request );
 
-		if ( false !== $result ) {
+		if ( $result ) {
 			$payment->set_action_url( $result->url );
 			$payment->set_transaction_id( $result->id );
 		} else {
