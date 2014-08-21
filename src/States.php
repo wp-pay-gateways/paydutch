@@ -8,7 +8,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-class Pronamic_Gateways_PayDutch_States {
+class Pronamic_WP_Pay_Gateways_PayDutch_States {
 	/**
 	 * Payment methods state 'Register'
 	 * 

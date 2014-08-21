@@ -8,7 +8,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-class Pronamic_Gateways_PayDutch_PayDutch {
+class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 	/**
 	 * Mollie API endpoint URL
 	 *
@@ -88,7 +88,7 @@ class Pronamic_Gateways_PayDutch_PayDutch {
 	 * Get payment methods
 	 */
 	public function get_payment_methods() {
-		$merchant = new Pronamic_Gateways_PayDutch_Merchant( $this->username, $this->password );
+		$merchant = new Pronamic_WP_Pay_Gateways_PayDutch_Merchant( $this->username, $this->password );
 		$message = new Pronamic_Gateways_PayDutch_XML_ListMethodRequestMessage( $merchant );
 
 		$result = $this->request( $message );
@@ -112,7 +112,7 @@ class Pronamic_Gateways_PayDutch_PayDutch {
 	public function get_bank_list() {
 		$list = null;
 
-		$message = new Pronamic_Gateways_PayDutch_XML_RetrieveBankListRequestMessage( Pronamic_Gateways_PayDutch_Methods::WEDEAL, true );
+		$message = new Pronamic_Gateways_PayDutch_XML_RetrieveBankListRequestMessage( Pronamic_WP_Pay_Gateways_PayDutch_Methods::WEDEAL, true );
 
 		$result = $this->request( $message );
 
@@ -134,10 +134,10 @@ class Pronamic_Gateways_PayDutch_PayDutch {
 	/**
 	 * Get an transaction request
 	 *
-	 * @return Pronamic_Gateways_PayDutch_TransactionRequest
+	 * @return Pronamic_WP_Pay_Gateways_PayDutch_TransactionRequest
 	 */
 	public function get_transaction_request() {
-		$transaction_request = new Pronamic_Gateways_PayDutch_TransactionRequest( $this->username, $this->password );
+		$transaction_request = new Pronamic_WP_Pay_Gateways_PayDutch_TransactionRequest( $this->username, $this->password );
 
 		return $transaction_request;
 	}
@@ -181,7 +181,7 @@ class Pronamic_Gateways_PayDutch_PayDutch {
 	public function get_payment_status( $reference ) {
 		$result = null;
 
-		$merchant = new Pronamic_Gateways_PayDutch_Merchant( $this->username, $this->password );
+		$merchant = new Pronamic_WP_Pay_Gateways_PayDutch_Merchant( $this->username, $this->password );
 		$merchant->reference = $reference;
 		$merchant->test = true;
 
@@ -241,21 +241,21 @@ class Pronamic_Gateways_PayDutch_PayDutch {
 	 */
 	public static function transform_state( $state ) {
 		switch ( $state ) {
-			case Pronamic_Gateways_PayDutch_States::REGISTER:
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::REGISTER:
 				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_OPEN;
-			case Pronamic_Gateways_PayDutch_States::PROCESSING:
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::PROCESSING:
 				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_OPEN;
-			case Pronamic_Gateways_PayDutch_States::INCOME:
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::INCOME:
 				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_SUCCESS;
-			case Pronamic_Gateways_PayDutch_States::ASSEMBLE:
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::ASSEMBLE:
 				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_OPEN;
-			case Pronamic_Gateways_PayDutch_States::PAYOUT:
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::PAYOUT:
 				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_SUCCESS;
-			case Pronamic_Gateways_PayDutch_States::SUCCESS:
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::SUCCESS:
 				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_SUCCESS;
-			case Pronamic_Gateways_PayDutch_States::CANCELLED:
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::CANCELLED:
 				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_CANCELLED;
-			case Pronamic_Gateways_PayDutch_States::FAILED:
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::FAILED:
 				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_FAILURE;
 			default:
 				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_OPEN;

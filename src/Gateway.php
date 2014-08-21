@@ -8,7 +8,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-class Pronamic_Gateways_PayDutch_Gateway extends Pronamic_WP_Pay_Gateway {
+class Pronamic_WP_Pay_Gateways_PayDutch_Gateway extends Pronamic_WP_Pay_Gateway {
 	/**
 	 * Slug of this gateway
 	 *
@@ -21,9 +21,9 @@ class Pronamic_Gateways_PayDutch_Gateway extends Pronamic_WP_Pay_Gateway {
 	/**
 	 * Constructs and initializes an PayDutch gateway
 	 *
-	 * @param Pronamic_Gateways_PayDutch_Config $config
+	 * @param Pronamic_WP_Pay_Gateways_PayDutch_Config $config
 	 */
-	public function __construct( Pronamic_Gateways_PayDutch_Config $config ) {
+	public function __construct( Pronamic_WP_Pay_Gateways_PayDutch_Config $config ) {
 		parent::__construct( $config );
 
 		$this->set_method( Pronamic_WP_Pay_Gateway::METHOD_HTTP_REDIRECT );
@@ -31,7 +31,7 @@ class Pronamic_Gateways_PayDutch_Gateway extends Pronamic_WP_Pay_Gateway {
 		$this->set_amount_minimum( 1.20 );
 		$this->set_slug( self::SLUG );
 
-		$this->client = new Pronamic_Gateways_PayDutch_PayDutch( $config->username, $config->password );
+		$this->client = new Pronamic_WP_Pay_Gateways_PayDutch_Client( $config->username, $config->password );
 	}
 
 	/////////////////////////////////////////////////
@@ -84,7 +84,7 @@ class Pronamic_Gateways_PayDutch_Gateway extends Pronamic_WP_Pay_Gateway {
 		$transaction_request->reference   = $payment->get_id();
 		$transaction_request->description = $data->get_description();
 		$transaction_request->amount      = $data->get_amount();
-		$transaction_request->method_code = Pronamic_Gateways_PayDutch_Methods::WEDEAL;
+		$transaction_request->method_code = Pronamic_WP_Pay_Gateways_PayDutch_Methods::WEDEAL;
 		$transaction_request->issuer_id   = $data->get_issuer_id();
 		$transaction_request->test        = true;
 		$transaction_request->success_url = add_query_arg( 'payment', $payment->get_id(), home_url( '/' ) );
@@ -111,7 +111,7 @@ class Pronamic_Gateways_PayDutch_Gateway extends Pronamic_WP_Pay_Gateway {
 		$result = $this->client->get_payment_status( $payment->get_id() );
 
 		if ( $result ) {
-			$payment->set_status( Pronamic_Gateways_PayDutch_PayDutch::transform_state( $result->state ) );
+			$payment->set_status( Pronamic_WP_Pay_Gateways_PayDutch_Client::transform_state( $result->state ) );
 			$payment->set_consumer_name( $result->consumername );
 			$payment->set_consumer_account_number( $result->consumeraccount );
 			$payment->set_consumer_city( $result->consumercity );

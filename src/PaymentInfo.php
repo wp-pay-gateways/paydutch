@@ -8,7 +8,7 @@
  * @author Remco Tolsma
  * @version 1.0
  */
-class Pronamic_Gateways_PayDutch_PaymentInfo {
+class Pronamic_WP_Pay_Gateways_PayDutch_PaymentInfo {
 
 
 	/////////////////////////////////////////////////
