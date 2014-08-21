@@ -80,4 +80,35 @@ class Pronamic_WP_Pay_Gateways_PayDutch_States {
 	 * @var string
 	 */
 	const FAILED = 'Failed';
+
+	/////////////////////////////////////////////////
+
+	/**
+	 * Transform an PayDutch state
+	 *
+	 * @param string $status
+	 * @return string
+	 */
+	public static function transform( $state ) {
+		switch ( $state ) {
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::REGISTER :
+				return Pronamic_WP_Pay_Statuses::OPEN;
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::PROCESSING :
+				return Pronamic_WP_Pay_Statuses::OPEN;
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::INCOME :
+				return Pronamic_WP_Pay_Statuses::SUCCESS;
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::ASSEMBLE :
+				return Pronamic_WP_Pay_Statuses::OPEN;
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::PAYOUT :
+				return Pronamic_WP_Pay_Statuses::SUCCESS;
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::SUCCESS :
+				return Pronamic_WP_Pay_Statuses::SUCCESS;
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::CANCELLED :
+				return Pronamic_WP_Pay_Statuses::CANCELLED;
+			case Pronamic_WP_Pay_Gateways_PayDutch_States::FAILED :
+				return Pronamic_WP_Pay_Statuses::FAILURE;
+			default :
+				return null;
+		}
+	}
 }

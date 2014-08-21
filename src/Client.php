@@ -252,34 +252,4 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 
 		return filter_var( $amount, FILTER_VALIDATE_FLOAT );
 	}
-
-	/////////////////////////////////////////////////
-
-	/**
-	 * Transform an PayDutch state
-	 *
-	 * @param string $status
-	 */
-	public static function transform_state( $state ) {
-		switch ( $state ) {
-			case Pronamic_WP_Pay_Gateways_PayDutch_States::REGISTER:
-				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_OPEN;
-			case Pronamic_WP_Pay_Gateways_PayDutch_States::PROCESSING:
-				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_OPEN;
-			case Pronamic_WP_Pay_Gateways_PayDutch_States::INCOME:
-				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_SUCCESS;
-			case Pronamic_WP_Pay_Gateways_PayDutch_States::ASSEMBLE:
-				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_OPEN;
-			case Pronamic_WP_Pay_Gateways_PayDutch_States::PAYOUT:
-				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_SUCCESS;
-			case Pronamic_WP_Pay_Gateways_PayDutch_States::SUCCESS:
-				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_SUCCESS;
-			case Pronamic_WP_Pay_Gateways_PayDutch_States::CANCELLED:
-				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_CANCELLED;
-			case Pronamic_WP_Pay_Gateways_PayDutch_States::FAILED:
-				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_FAILURE;
-			default:
-				return Pronamic_Gateways_IDealAdvanced_Transaction::STATUS_OPEN;
-		}
-	}
 }
