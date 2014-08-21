@@ -35,6 +35,15 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 	/////////////////////////////////////////////////
 
 	/**
+	 * Test flag
+	 *
+	 * @var boolean
+	 */
+	private $test;
+
+	/////////////////////////////////////////////////
+
+	/**
 	 * Error
 	 *
 	 * @var WP_Error
@@ -52,6 +61,8 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 	public function __construct( $username, $password ) {
 		$this->username = $username;
 		$this->password = $password;
+
+		$this->test = false;
 	}
 
 	/////////////////////////////////////////////////
@@ -65,6 +76,16 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 		return $this->error;
 	}
 
+	/////////////////////////////////////////////////
+
+	/**
+	 * Set test
+	 *
+	 * @param boolean $test
+	 */
+	public function set_test( $test ) {
+		$this->test = $test;
+	}
 
 	/////////////////////////////////////////////////
 
@@ -112,7 +133,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 	public function get_bank_list() {
 		$list = null;
 
-		$message = new Pronamic_WP_Pay_Gateways_PayDutch_XML_RetrieveBankListRequestMessage( Pronamic_WP_Pay_Gateways_PayDutch_Methods::WEDEAL, true );
+		$message = new Pronamic_WP_Pay_Gateways_PayDutch_XML_RetrieveBankListRequestMessage( Pronamic_WP_Pay_Gateways_PayDutch_Methods::WEDEAL, $this->test );
 
 		$result = $this->request( $message );
 
@@ -183,7 +204,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 
 		$merchant = new Pronamic_WP_Pay_Gateways_PayDutch_Merchant( $this->username, $this->password );
 		$merchant->reference = $reference;
-		$merchant->test = true;
+		$merchant->test = $this->test;
 
 		$message = new Pronamic_WP_Pay_Gateways_PayDutch_XML_QueryRequestMessage( $merchant );
 
