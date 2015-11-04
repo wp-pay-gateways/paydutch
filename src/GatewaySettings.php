@@ -27,8 +27,9 @@ class Pronamic_WP_Pay_Gateways_PayDutch_GatewaySettings extends Pronamic_WP_Pay_
 	}
 
 	public function fields( array $fields ) {
-		// Hash Key
+		// Username
 		$fields[] = array(
+			'filter'      => FILTER_SANITIZE_STRING,
 			'section'     => 'paydutch',
 			'meta_key'    => '_pronamic_gateway_paydutch_username',
 			'title'       => __( 'Username', 'pronamic_ideal' ),
@@ -36,7 +37,9 @@ class Pronamic_WP_Pay_Gateways_PayDutch_GatewaySettings extends Pronamic_WP_Pay_
 			'classes'     => array( 'code' ),
 		);
 
+		// Password
 		$fields[] = array(
+			'filter'      => FILTER_SANITIZE_STRING,
 			'section'     => 'paydutch',
 			'meta_key'    => '_pronamic_gateway_paydutch_password',
 			'title'       => __( 'Password', 'pronamic_ideal' ),
@@ -44,6 +47,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_GatewaySettings extends Pronamic_WP_Pay_
 			'classes'     => array( 'code' ),
 		);
 
+		// Success CallbackURL
 		$fields[] = array(
 			'section'     => 'paydutch',
 			'title'       => __( 'Success CallbackURL', 'pronamic_ideal' ),
@@ -53,6 +57,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_GatewaySettings extends Pronamic_WP_Pay_
 			'readonly'    => true,
 		);
 
+		// Fail CallbackURL
 		$fields[] = array(
 			'section'     => 'paydutch',
 			'title'       => __( 'Fail CallbackURL', 'pronamic_ideal' ),
