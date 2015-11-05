@@ -89,8 +89,8 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Gateway extends Pronamic_WP_Pay_Gateway 
 		$transaction_request->method_code = Pronamic_WP_Pay_Gateways_PayDutch_Methods::WEDEAL;
 		$transaction_request->issuer_id   = $data->get_issuer_id();
 		$transaction_request->test        = true;
-		$transaction_request->success_url = add_query_arg( 'payment', $payment->get_id(), home_url( '/' ) );
-		$transaction_request->fail_url    = add_query_arg( 'payment', $payment->get_id(), home_url( '/' ) );
+		$transaction_request->success_url = $payment->get_return_url();
+		$transaction_request->fail_url    = $payment->get_return_url();
 
 		$result = $this->client->request_transaction( $transaction_request );
 
