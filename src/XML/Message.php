@@ -82,7 +82,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_XML_Message {
 	public static function add_element( DOMDocument $document, DOMNode $parent, $name, $value = null ) {
 		$element = $document->createElement( $name );
 
-		if ( $value !== null ) {
+		if ( null !== $value ) {
 			$element->appendChild( new DOMText( $value ) );
 		}
 
@@ -102,7 +102,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_XML_Message {
 		foreach ( $elements as $name => $value ) {
 			$element = $document->createElement( $name );
 
-			if ( $value !== null ) {
+			if ( null !== $value ) {
 				$element->appendChild( new DOMText( $value ) );
 			}
 

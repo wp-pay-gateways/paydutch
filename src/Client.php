@@ -121,8 +121,6 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Client {
 
 			if ( is_wp_error( $xml ) ) {
 				$this->error = $xml;
-			} else {
-
 			}
 		}
 	}

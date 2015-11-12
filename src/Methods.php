@@ -2,7 +2,7 @@
 
 /**
  * Title: PayDutch methods
- * Description: 
+ * Description:
  * Copyright: Copyright (c) 2005 - 2015
  * Company: Pronamic
  * @author Remco Tolsma
@@ -11,14 +11,14 @@
 class Pronamic_WP_Pay_Gateways_PayDutch_Methods {
 	/**
 	 * Payment method WeDeal
-	 * 
+	 *
 	 * @var string
 	 */
 	const WEDEAL = '0101';
 
 	/**
 	 * Payment method DirectEBanking
-	 * 
+	 *
 	 * @var string
 	 */
 	const DIRECT_EBANKING = '0103';

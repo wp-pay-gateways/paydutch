@@ -2,7 +2,7 @@
 
 /**
  * Title: PayDutch merchant
- * Description: 
+ * Description:
  * Copyright: Copyright (c) 2005 - 2015
  * Company: Pronamic
  * @author Remco Tolsma
@@ -11,14 +11,14 @@
 class Pronamic_WP_Pay_Gateways_PayDutch_Merchant {
 	/**
 	 * PayDutch username
-	 * 
+	 *
 	 * @var string
 	 */
 	public $username;
 
 	/**
 	 * PayDutch password
-	 * 
+	 *
 	 * @var string
 	 */
 	public $password;
@@ -27,7 +27,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_Merchant {
 
 	/**
 	 * Constructs and initializes an Mollie client object
-	 * 
+	 *
 	 * @param string $username
 	 * @param string $password
 	 */
