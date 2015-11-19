@@ -1,6 +1,6 @@
 <?php
 
-class Pronamic_WP_Pay_Gateways_PayDutch_Integration {
+class Pronamic_WP_Pay_Gateways_PayDutch_Integration extends Pronamic_WP_Pay_Gateways_AbstractIntegration {
 	public function __construct() {
 		$this->id            = 'paydutch';
 		$this->name          = 'PayDutch';
