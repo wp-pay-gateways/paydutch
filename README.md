@@ -1,4 +1,4 @@
-# WordPress Pay Gateway: PayDutch
+# [DEPRECATED] WordPress Pay Gateway: PayDutch
 
 **PayDutch driver for the WordPress payment processing library.**
 
