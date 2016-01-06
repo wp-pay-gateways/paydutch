@@ -35,10 +35,10 @@ On January 4, 2016 the Dutch Payment Group B.V. (info@paydutch.com) announced th
 >
 > Wij wensen u veel succes bij het online zaken doen,
 > 
-> Dutch Payment Group B.V.
-> Maastrichterlaan 163
-> 6291 EP  Vaals
-> Netherlands
+> Dutch Payment Group B.V.  
+> Maastrichterlaan 163  
+> 6291 EP  Vaals  
+> Netherlands  
 > 
-> KVK.: 50288644
+> KVK.: 50288644  
 > BTW.: 8226.59.128.B01
