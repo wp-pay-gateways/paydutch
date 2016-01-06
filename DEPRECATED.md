@@ -31,7 +31,7 @@ On January 4, 2016 the Dutch Payment Group B.V. (info@paydutch.com) announced th
 > - +31 20 700 99 90
 > 
 > Voor het gebruik van de PayDutch Manager heeft u uw gebruikersnaam en wachtwoord nodig.
-> Uw gebruikersnaam betreft: __username__ uw wachtwoord kunt u desgewenst laten resetten.
+> Uw __gebruikersnaam__ betreft: __username__ uw __wachtwoord__ kunt u desgewenst laten __resetten__.
 >
 > Wij wensen u veel succes bij het online zaken doen,
 > 
