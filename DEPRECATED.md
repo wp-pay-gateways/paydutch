@@ -2,10 +2,11 @@
 
 On January 4, 2016 the Dutch Payment Group B.V. (info@paydutch.com) announced the end of all services:
 
-> __Datum:__ 4 januari 2016 13:59
-> __Onderwerp:__ Belangrijke mededeling aangaande uw IDEAL transacties
+> __Datum:__ 4 januari 2016 13:59  
+> __Onderwerp:__ Belangrijke mededeling aangaande uw IDEAL transacties  
 > 
 > Geachte heer/mevrouw,
+>
 > **Belangrijke mededeling** voor uw bedrijf __Example__ met de website __www.example.com__
 > 
 > __ICEPAY heeft in 2014 de portefeuille van de Dutch Payment Group (DPG) overgenomen en voert sindsdien de bijbehorende online transacties uit.__
