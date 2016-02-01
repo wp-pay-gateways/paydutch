@@ -2,23 +2,24 @@
 
 /**
  * Title: PayDutch transaction request
- * Description: 
- * Copyright: Copyright (c) 2005 - 2015
+ * Description:
+ * Copyright: Copyright (c) 2005 - 2016
  * Company: Pronamic
+ *
  * @author Remco Tolsma
  * @version 1.0.0
  */
 class Pronamic_WP_Pay_Gateways_PayDutch_TransactionRequest {
 	/**
 	 * PayDutch username
-	 * 
+	 *
 	 * @var string
 	 */
 	public $username;
 
 	/**
 	 * PayDutch password
-	 * 
+	 *
 	 * @var string
 	 */
 	public $password;
@@ -29,7 +30,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_TransactionRequest {
 
 	/**
 	 * Constructs and initializes an Mollie client object
-	 * 
+	 *
 	 * @param string $username
 	 * @param string $password
 	 */

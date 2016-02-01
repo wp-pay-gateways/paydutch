@@ -3,8 +3,9 @@
 /**
  * Title: Query request XML message
  * Description:
- * Copyright: Copyright (c) 2005 - 2015
+ * Copyright: Copyright (c) 2005 - 2016
  * Company: Pronamic
+ *
  * @author Remco Tolsma
  * @version 1.0.0
  */
@@ -38,7 +39,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_XML_QueryRequestMessage extends Pronamic
 			'username'    => $this->merchant->username,
 			'password'    => $this->merchant->password,
 			'reference'   => $this->merchant->reference,
-			'test'        => Pronamic_WP_Pay_Util::to_string_boolean( $this->merchant->test )
+			'test'        => Pronamic_WP_Pay_Util::to_string_boolean( $this->merchant->test ),
 		) );
 
 		// Return

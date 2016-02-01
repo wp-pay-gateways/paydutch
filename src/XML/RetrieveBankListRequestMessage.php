@@ -3,8 +3,9 @@
 /**
  * Title: iDEAL directory request XML message
  * Description:
- * Copyright: Copyright (c) 2005 - 2015
+ * Copyright: Copyright (c) 2005 - 2016
  * Company: Pronamic
+ *
  * @author Remco Tolsma
  * @version 1.0.0
  */
@@ -37,7 +38,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_XML_RetrieveBankListRequestMessage exten
 		$element = self::add_element( $document, $document->documentElement, 'retrievebanklist' );
 		self::add_elements( $document, $element, array(
 			'methodcode' => $this->method_code,
-			'test'       => Pronamic_WP_Pay_Util::to_string_boolean( $this->test )
+			'test'       => Pronamic_WP_Pay_Util::to_string_boolean( $this->test ),
 		) );
 
 		// Return

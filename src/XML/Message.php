@@ -3,8 +3,9 @@
 /**
  * Title: iDEAL XML message
  * Description:
- * Copyright: Copyright (c) 2005 - 2015
+ * Copyright: Copyright (c) 2005 - 2016
  * Company: Pronamic
+ *
  * @author Remco Tolsma
  * @version 1.0.0
  */
@@ -82,7 +83,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_XML_Message {
 	public static function add_element( DOMDocument $document, DOMNode $parent, $name, $value = null ) {
 		$element = $document->createElement( $name );
 
-		if ( $value !== null ) {
+		if ( null !== $value ) {
 			$element->appendChild( new DOMText( $value ) );
 		}
 
@@ -102,7 +103,7 @@ class Pronamic_WP_Pay_Gateways_PayDutch_XML_Message {
 		foreach ( $elements as $name => $value ) {
 			$element = $document->createElement( $name );
 
-			if ( $value !== null ) {
+			if ( null !== $value ) {
 				$element->appendChild( new DOMText( $value ) );
 			}
 
